@@ -2,7 +2,7 @@
 
 let currentLanguage = 'en';
 
-// Function to set the language
+// Function to set the language because we want to change the language later on MKM
 function setLanguage(lang) {
     currentLanguage = lang;
     loadContent();
@@ -10,7 +10,7 @@ function setLanguage(lang) {
     toggleLanguageOptions(false);
 }
 
-// Function to load content based on selected language
+// Function to load content based on selected language from i18n files. Added functionality to handle lists MKM
 function loadContent() {
     fetch(`i18n/${currentLanguage}.json`)
         .then(response => response.json())
@@ -22,8 +22,24 @@ function loadContent() {
                 keys.forEach(key => {
                     text = text[key];
                 });
+
                 if (text) {
-                    element.innerText = text;
+                    if (Array.isArray(text)) {
+                        // If the element is a list and text is an array, populate list items
+                        if (element.tagName.toLowerCase() === 'ul' || element.tagName.toLowerCase() === 'ol') {
+                            element.innerHTML = ''; // Clear existing items
+                            text.forEach(item => {
+                                const li = document.createElement('li');
+                                li.textContent = item;
+                                element.appendChild(li);
+                            });
+                        } else {
+                            // For other elements, join array into a string
+                            element.innerText = text.join(', ');
+                        }
+                    } else {
+                        element.innerText = text;
+                    }
                 }
             });
         })
@@ -32,12 +48,12 @@ function loadContent() {
         });
 }
 
-// Function to save language preference to localStorage
+// Save to localStorage
 function saveLanguagePreference(lang) {
     localStorage.setItem('preferredLanguage', lang);
 }
 
-// Function to load language preference from localStorage
+// Loads language select from localStorage
 function loadLanguagePreference() {
     const savedLang = localStorage.getItem('preferredLanguage');
     if (savedLang) {
@@ -71,7 +87,7 @@ document.addEventListener('click', (event) => {
     }
 });
 
-// Toggle navigation links on hamburger click
+// Toggle navigation links on hamburger click //Maybe delete
 document.getElementById('hamburger').addEventListener('click', () => {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');

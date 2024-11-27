@@ -428,3 +428,29 @@ footer a:hover {
     background-color: #16a085;
     transform: translateY(-2px);
 }
+.skills-list {
+    list-style-type: disc; /* Ensures bullets are displayed */
+    list-style-position: inside; /* Positions bullets inside the list */
+    max-width: 600px; /* Sets a maximum width for the list */
+    margin: 20px auto; /* Centers the list horizontally */
+    padding-left: 0; /* Removes default padding */
+    text-align: left; /* Aligns text to the left within the centered container */
+}
+
+/* Optional: Customize the bullets */
+.skills-list li::marker {
+    color: #1abc9c; /* Change bullet color to match your accent */
+    font-size: 1.2em; /* Increase bullet size if desired */
+}
+.skills-list li {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.skills-list li:hover {
+    transform: translateX(10px); /* Moves the item slightly to the right on hover */
+    color: #1abc9c; /* Changes text color on hover */
+}
+

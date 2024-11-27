@@ -29,6 +29,27 @@
   },
   "footer": {
     "copyright": "© 2024 KitchenService. All rights reserved."
-  }
+  },
 
+  "aboutMe": {
+    "Title": "About Me",
+    "Description": "My name is Peter, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations."
+  },
+  "aboutCompany": {
+    "Title": "About Our Company",
+    "Description": "JN Kitchen Montage was founded in 2002 with a single goal: to offer customized kitchen solutions that combine functionality and aesthetics. Over the years, we have had the pleasure of working with a wide range of customers, from private homeowners to larger companies. Our success is built on trust, quality, and a personal approach to every single project."
+  },
+  "aboutSkills": {
+    "Title": "Our Expertise",
+    "Description": [
+      "Installation of kitchens with the highest quality.",
+      "Design and customization of kitchen solutions.",
+      "Repair and maintenance of kitchen equipment.",
+      "Installation of countertops and cabinets.",
+      "Tailored advice for kitchen design."
+    ]
+  }
 }
+
+
+

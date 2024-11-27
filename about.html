@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Frontpage</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KitchenService provides top-notch kitchen solutions tailored to your needs.">
+    <meta name="description" content="Learn more about Peter and JN Kitchen Montage, our expertise, and our commitment to quality kitchen solutions.">
 </head>
 <body>
 <header>
@@ -30,10 +30,21 @@
 </header>
 
 <main>
-    <section class="hero">
-        <h1 data-i18n="hero.title">Welcome to KitchenService</h1>
-        <p data-i18n="hero.description">We provide top-notch kitchen solutions tailored to your needs.</p>
-        <a href="service.html" class="cta-button" data-i18n="hero.cta">Our Services</a>
+    <section class="about-section">
+        <h1 data-i18n="aboutMe.Title">About Me</h1>
+        <p data-i18n="aboutMe.Description">My name is Peter, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations.</p>
+    </section>
+
+    <section class="about-section">
+        <h1 data-i18n="aboutCompany.Title">About Our Company</h1>
+        <p data-i18n="aboutCompany.Description">JN Kitchen Montage was founded in 2002 with a single goal: to offer customized kitchen solutions that combine functionality and aesthetics. Over the years, we have had the pleasure of working with a wide range of customers, from private homeowners to larger companies. Our success is built on trust, quality, and a personal approach to every single project.</p>
+    </section>
+
+    <section class="about-section">
+        <h1 data-i18n="aboutSkills.Title">Our Expertise</h1>
+        <ul id="aboutSkillsDescription" class="skills-list" data-i18n="aboutSkills.Description">
+            <!-- List items will be populated by JavaScript -->
+        </ul>
     </section>
 </main>
 
@@ -48,9 +59,11 @@
 </div>
 
 <footer>
-    <p>&copy; 2024 KitchenService. All rights reserved.</p>
+    <p data-i18n="footer.copyright">
+        © 2024 KitchenService. All rights reserved.
+    </p>
 </footer>
 
-<script src="/js/LanguageSelect.js"></script>
+<script src="js/LanguageSelect.js"></script>
 </body>
 </html>
