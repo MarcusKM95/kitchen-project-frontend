@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontpage</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KitchenService provides top-notch kitchen solutions tailored to your needs.">
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">KitchenService</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.forside">Forside</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+            <li><a href="aboutUs.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="contact.html" data-i18n="nav.contact">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1 data-i18n="hero.title">Welcome to KitchenService</h1>
+        <p data-i18n="hero.description">We provide top-notch kitchen solutions tailored to your needs.</p>
+        <a href="service.html" class="cta-button" data-i18n="hero.cta">Our Services</a>
+    </section>
+</main>
+
+<!-- Floating Language Selector -->
+<div class="language-selector">
+    <button id="lang-btn" aria-label="Select Language">🌐</button>
+    <div id="lang-options" class="lang-options hidden">
+        <button onclick="setLanguage('en')" aria-label="Switch to English">English</button>
+        <button onclick="setLanguage('da')" aria-label="Skift til dansk">Danish</button>
+        <button onclick="setLanguage('be')" aria-label="Switch to Belgian">Belgian</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 KitchenService. All rights reserved.</p>
+</footer>
+
+<script src="/js/LanguageSelect.js"></script>
+</body>
+</html>

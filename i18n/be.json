@@ -1,0 +1,33 @@
+{
+  "about": {
+    "title": "Over Ons",
+    "description": "Wij zetten ons in voor het leveren van de beste keukendiensten."
+  },
+  "nav": {
+    "forside": "Home",
+    "gallery": "Galerij",
+    "service": "Service",
+    "about": "Over Ons",
+    "contact": "Contacteer Ons"
+  },
+  "hero": {
+    "title": "Welkom bij KitchenService",
+    "description": "Wij bieden eersteklas keukensoplossingen op maat van uw behoeften.",
+    "cta": "Onze Services"
+  },
+  "gallery": {
+    "title": "Galerij",
+    "description": "Verken onze nieuwste keukenprojecten."
+  },
+  "service": {
+    "title": "Onze Services",
+    "description": "Wij bieden een breed scala aan keukendiensten om aan uw wensen te voldoen."
+  },
+  "contact": {
+    "title": "Contacteer Ons",
+    "description": "Neem contact met ons op voor meer informatie."
+  },
+  "footer": {
+    "copyright": "© 2024 KitchenService. All rights reserved."
+  }
+}

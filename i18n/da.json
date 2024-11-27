@@ -1,0 +1,35 @@
+{
+  "about": {
+    "title": "Om Os",
+    "description": "Vi er dedikerede til at levere de bedste køkkentjenester."
+  },
+
+  "nav": {
+    "forside": "Forside",
+    "gallery": "Galleri",
+    "service": "Service",
+    "about": "Om Os",
+    "contact": "Kontakt Os"
+  },
+  "hero": {
+    "title": "Velkommen til KitchenService",
+    "description": "Vi leverer førsteklasses køkkenløsninger skræddersyet til dine behov.",
+    "cta": "Vores Services"
+  },
+  "gallery": {
+    "title": "Galleri",
+    "description": "Udforsk vores seneste køkkenprojekter."
+  },
+  "service": {
+    "title": "Vores Services",
+    "description": "Vi tilbyder et bredt udvalg af køkkentjenester for at opfylde dine krav."
+  },
+  "contact": {
+    "title": "Kontakt Os",
+    "description": "Kontakt os for mere information."
+  },
+  "footer": {
+    "copyright": "© 2024 KitchenService. All rights reserved."
+  }
+
+}

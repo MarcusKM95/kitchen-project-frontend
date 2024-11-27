@@ -1,0 +1,34 @@
+{
+  "about": {
+    "title": "About Us",
+    "description": "We are dedicated to providing the best kitchen services."
+  },
+  "nav": {
+    "forside": "Home",
+    "gallery": "Gallery",
+    "service": "Service",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Welcome to KitchenService",
+    "description": "We provide top-notch kitchen solutions tailored to your needs.",
+    "cta": "Our Services"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "description": "Explore our latest kitchen projects."
+  },
+  "service": {
+    "title": "Our Services",
+    "description": "We offer a wide range of kitchen services to meet your requirements."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with us for more information."
+  },
+  "footer": {
+    "copyright": "© 2024 KitchenService. All rights reserved."
+  }
+
+}
