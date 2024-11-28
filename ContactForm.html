@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt os</title>
+    <link rel="stylesheet" href="css/kontaktform.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <button onclick="location.href='/'">Forside</button>
+        <button onclick="location.href='/gallery'">Galleri</button>
+        <button onclick="location.href='/service'">Service</button>
+        <button onclick="location.href='/about'">Om os</button>
+        <button onclick="location.href='/contact'">Kontakt os</button>
+    </nav>
+</header>
+
+<main>
+    <h1>Kontakt os</h1>
+    <div class="content-wrapper">
+        <!-- Kontaktformular -->
+        <form id="contact-form">
+            <label for="name">Dit Navn:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="zipcode">Postnummer:</label>
+            <input type="text" id="zipcode" name="zipcode" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Besked:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send besked</button>
+        </form>
+
+
+    </div>
+</main>
+
+<footer>
+    <select>
+        <option value="da">Dansk</option>
+        <option value="en">English</option>
+    </select>
+    <p>© 2024 Hans adresse og telefonnummer, timerne han kan kontaktes</p>
+</footer>
+
+<script src="js/kontaktform.js"></script>
+</body>
+</html>
