@@ -2,12 +2,14 @@
 document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.preventDefault(); // Forhindre standard formular indsendelse
 
+
     // Hent værdier fra inputfelterne
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const zipcode = document.getElementById('zipcode').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
+
 
     // Opret kontakt-objekt
     const contact = { name, phone, zipcode, email, message };
