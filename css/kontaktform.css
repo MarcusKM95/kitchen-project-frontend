@@ -1,0 +1,120 @@
+/* Grundlæggende stil for at gøre formularen pænere */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+nav button:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 8px 0; /* Kun top og bund padding */
+    font-size: 16px;
+    border: none; /* Fjern bokse */
+    border-bottom: 2px solid #ddd; /* Tilføj bundlinje */
+    outline: none; /* Fjern standard rammer */
+    transition: border-color 0.3s ease; /* Glidende farveændring ved fokus */
+}
+
+input:focus, textarea:focus {
+    border-bottom: 2px solid #333333; /* Grøn linje ved fokus */
+}
+
+textarea {
+    resize: none; /* Forhindre størrelsesændring */
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: honeydew;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Styling til overskrifter */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Navigationsknapperne */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav button:hover {
+    background-color: #575757;
+    transform: scale(1.05); /* Giv en let forstørrelseseffekt */
+}
