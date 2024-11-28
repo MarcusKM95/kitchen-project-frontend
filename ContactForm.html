@@ -2,54 +2,76 @@
 <html lang="da">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt os</title>
-    <link rel="stylesheet" href="css/kontaktform.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakt os for mere information om vores køkkenløsninger.">
 </head>
 <body>
 
 <header>
-    <nav>
-        <button onclick="location.href='/'">Forside</button>
-        <button onclick="location.href='/gallery'">Galleri</button>
-        <button onclick="location.href='/service'">Service</button>
-        <button onclick="location.href='/about'">Om os</button>
-        <button onclick="location.href='/contact'">Kontakt os</button>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">KitchenService</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.forside">Forside</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+            <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+            <li><a href="about.html" data-i18n="nav.about">Om os</a></li>
+            <li><a href="ContactForm.html" data-i18n="nav.contact">Kontakt os</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 </header>
 
 <main>
-    <h1>Kontakt os</h1>
-    <div class="content-wrapper">
-        <!-- Kontaktformular -->
-        <form id="contact-form">
-            <label for="name">Dit Navn:</label>
-            <input type="text" id="name" name="name" required>
+    <section class="contact-section">
+        <h1>Kontakt os</h1>
+        <div class="content-wrapper">
+            <!-- Kontaktformular -->
+            <form id="contact-form" class="contact-form">
+                <label for="name">Dit Navn:</label>
+                <input type="text" id="name" name="name" placeholder="Indtast dit navn" required>
 
-            <label for="phone">Telefonnummer:</label>
-            <input type="tel" id="phone" name="phone" required>
+                <label for="phone">Telefonnummer:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Indtast dit telefonnummer" required>
 
-            <label for="zipcode">Postnummer:</label>
-            <input type="text" id="zipcode" name="zipcode" required>
+                <label for="zipcode">Postnummer:</label>
+                <input type="text" id="zipcode" name="zipcode" placeholder="Indtast dit postnummer" required>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required>
 
-            <label for="message">Besked:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+                <label for="message">Besked:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Skriv din besked her..." required></textarea>
 
-            <button type="submit">Send besked</button>
-        </form>
-    </div>
+                <button type="submit" class="button">Send besked</button>
+            </form>
+            <!-- Form Messages -->
+            <div id="form-messages"></div>
+        </div>
+    </section>
 </main>
 
 <footer>
-    <select>
-        <option value="da">Dansk</option>
-        <option value="en">English</option>
-    </select>
     <p>© 2024 Hans adresse og telefonnummer, timerne han kan kontaktes</p>
 </footer>
+
+<!-- Floating Language Selector -->
+<div class="language-selector">
+    <button id="lang-btn" aria-label="Select Language">🌐</button>
+    <div id="lang-options" class="lang-options hidden">
+        <button onclick="setLanguage('da')" aria-label="Skift til dansk">Dansk</button>
+        <button onclick="setLanguage('en')" aria-label="Switch to English">English</button>
+        <button onclick="setLanguage('be')" aria-label="Switch to Belgian">Belgian</button>
+    </div>
+</div>
 
 <!-- Include LanguageSelect.js and kontaktform.js -->
 <script src="js/LanguageSelect.js"></script>
