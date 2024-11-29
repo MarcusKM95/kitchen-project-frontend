@@ -5,11 +5,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #e8f5e9; /* Lys grøn farve */
+    background-color: #e3f2fd; /* Lys blå farve */
 }
 
 header {
-    background-color: #081039; /* Mørk grøn farve */
+    background-color: #04192b; /* Blå farve */
     color: white;
     padding: 20px;
     width: 100%;
@@ -45,7 +45,7 @@ input {
 }
 
 button {
-    background-color: #060f42; /* Grøn knap */
+    background-color: #072845; /* Blå knap */
     color: white;
     padding: 10px;
     font-size: 16px;
@@ -55,7 +55,7 @@ button {
 }
 
 button:hover {
-    background-color: #0d1540; /* Mørkere grøn */
+    background-color: #1565c0; /* Mørkere blå */
 }
 
 p {
@@ -64,7 +64,7 @@ p {
 }
 
 a {
-    color: #071145;
+    color: #1e88e5;
     text-decoration: none;
 }
 

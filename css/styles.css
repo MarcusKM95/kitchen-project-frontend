@@ -415,3 +415,8 @@ footer a:hover {
     transform: translateX(10px); /* Moves the item slightly to the right on hover */
     color: #1abc9c; /* Changes text color on hover */
 }
+
+
+.login-link {
+    margin-left: auto; /* Push login link to the far right */
+}

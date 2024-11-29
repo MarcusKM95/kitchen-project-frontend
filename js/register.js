@@ -1,28 +1,26 @@
-document.getElementById('registerForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
+document.getElementById("registerForm").addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const roles = document.getElementById('roles').value;
-
-    const registerData = { email, pwd: password, roles };
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const phone = document.getElementById("phone").value;
+    const password = document.getElementById("password").value;
 
     try {
-        const response = await fetch('http://localhost:8080/register', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(registerData),
+        const response = await fetch("http://localhost:8080/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, username, phone, password }),
         });
 
         if (response.ok) {
-            alert('User successfully registered!');
-            window.location.href = 'index.html'; // Redirect to login page
+            alert("User registered successfully!");
+            window.location.href = "login.html";
         } else {
-            const errorData = await response.text();
-            alert(`Error: ${errorData}`);
+            const errorMessage = await response.text();
+            alert("Registration failed: " + errorMessage);
         }
     } catch (error) {
-        console.error('Error during registration:', error);
-        alert('An error occurred. Please try again.');
+        console.error("Error:", error);
     }
 });
