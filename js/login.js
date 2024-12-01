@@ -12,12 +12,12 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
         });
 
         if (response.ok) {
-            const token = await response.text();
-            localStorage.setItem("token", token);
+            const token = await response.text(); // Here, we're expecting the token in the response
+            localStorage.setItem("token", token);  // Store the token in localStorage
             alert("Login successful!");
             window.location.href = "dashboard.html";
         } else {
-            alert("Login failed!");
+            alert("Login failed: " + await response.text());
         }
     } catch (error) {
         console.error("Error:", error);
