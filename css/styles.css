@@ -41,7 +41,7 @@ body {
     font-size: 28px; /* Larger font size */
     font-weight: 700;
     letter-spacing: 1px;
-    margin-right: 50px; /* Space between logo and nav links */
+    margin-right: 100px; /* Space between logo and nav links */
 }
 
 /* Navigation Links */
@@ -419,4 +419,162 @@ footer a:hover {
 
 .login-link {
     margin-left: auto; /* Push login link to the far right */
+}
+
+/* Logo Container Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+/* Logo Image Styling */
+.logo img {
+    max-width: 120px;  /* Juster logo størrelse */
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Logo Text Styling */
+.logo a {
+    color: #2C3E50;  /* Farve for tekst-logo */
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effekt på Logo */
+.logo a:hover, .logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+    .logo img {
+        max-width: 80px;
+    }
+
+    .logo a {
+        font-size: 24px;
+    }
+}
+
+/* Just trying to have logo for all pages */
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Placerer logoet til venstre og linksene til højre */
+    align-items: center; /* Centrerer både logo og navigation vertikalt */
+    padding: 10px 20px; /* Juster padding efter behov */
+    background-color: #333; /* Baggrundsfarve på navbar */
+}
+
+/* Logo Styling */
+.logo a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Styling af navigation links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px; /* Afstand mellem links */
+}
+
+.nav-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 18px; /* Størrelse på tekst */
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+    color: #fff; /* Hover-effekt */
+}
+
+/* Mobile hamburger menu (valgfrit) */
+.hamburger {
+    display: none; /* Skjuler hamburger på desktop */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px; /* Afstand mellem links på mobil */
+    }
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+/* to gallery */
+/* Logo styling */
+.logo-img {
+    width: 120px;  /* Adjust the size as needed */
+    height: auto;
+}
+
+
+/* for service page */
+
+/* Hero Section Styling */
+.services-hero {
+    background-color: #f0f0f0;
+    padding: 50px;
+    text-align: center;
+}
+.services-hero h1 {
+    font-size: 36px;
+    color: #333;
+}
+.services-hero p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Service List Styling */
+.service-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+.service-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+.service-item h2 {
+    font-size: 24px;
+    color: #333;
+}
+.service-item p {
+    font-size: 16px;
+    color: #666;
 }

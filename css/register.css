@@ -55,7 +55,7 @@ button {
 }
 
 button:hover {
-    background-color: #0d1540; /* Mørkere grøn */
+    background-color: #071142; /* Mørkere grøn */
 }
 
 p {
@@ -64,7 +64,7 @@ p {
 }
 
 a {
-    color: #071145;
+    color: #050c32;
     text-decoration: none;
 }
 

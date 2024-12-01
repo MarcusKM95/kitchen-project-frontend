@@ -12,7 +12,9 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html">KitchenService</a>
+            <a href="index.html">
+                <img src="images/logo.png" alt="KitchenService Logo" class="logo-img">
+            </a>
         </div>
         <ul class="nav-links">
             <li><a href="index.html" data-i18n="nav.forside">Forside</a></li>
@@ -32,7 +34,10 @@
 <main>
     <section class="about-section">
         <h1 data-i18n="aboutMe.Title">About Me</h1>
-        <p data-i18n="aboutMe.Description">My name is Peter, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations.</p>
+        <div class="about-me-content">
+            <img src="images/peter-profile.jpg" alt="Peter - Kitchen Installer" class="about-profile-img">
+            <p data-i18n="aboutMe.Description">My name is Peter, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations.</p>
+        </div>
     </section>
 
     <section class="about-section">
@@ -43,7 +48,7 @@
     <section class="about-section">
         <h1 data-i18n="aboutSkills.Title">Our Expertise</h1>
         <ul id="aboutSkillsDescription" class="skills-list" data-i18n="aboutSkills.Description">
-            <!-- List items will be populated by JavaScript -->
+            <!-- Skills will be populated by JavaScript -->
         </ul>
     </section>
 </main>
@@ -65,5 +70,6 @@
 </footer>
 
 <script src="js/LanguageSelect.js"></script>
+<script src="js/about.js"></script>
 </body>
 </html>
