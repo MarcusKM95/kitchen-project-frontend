@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const token = sessionStorage.getItem("token");
-    const isAdmin = sessionStorage.getItem("isAdmin"); // Sørg for, at isAdmin er korrekt sat under login
+    const isAdmin = sessionStorage.getItem("isAdmin");
 
     // Check if token exists, meaning the user is already logged in
     if (token) {
@@ -44,23 +44,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     body: JSON.stringify({ email, password }),
                 });
 
+                // Read the response as text first
+                const responseText = await response.text();
+                console.log("Server response:", responseText); // Log server response to help debugging
+
                 if (response.ok) {
-                    const token = await response.text(); // Get the token from response
-                    sessionStorage.setItem("token", token); // Store token in sessionStorage
+                    // If the response is a success message in text format
+                    if (responseText.includes("Welcome")) {
+                        // Assuming the responseText contains a welcome message and no JSON is needed
+                        sessionStorage.setItem("token", responseText); // Store the token (or use another value if needed)
 
-                    // Optionally set isAdmin if response includes it
-                    const userInfo = await response.json(); // Assuming the response has user data
-                    if (userInfo.isAdmin) {
-                        sessionStorage.setItem("isAdmin", "true"); // Store admin flag if needed
+                        alert("Login successful!");
+                        window.location.href = "dashboard.html"; // Redirect to dashboard
+                    } else {
+                        // If response doesn't contain a welcome message, handle as an error
+                        alert("Login failed: " + responseText);
                     }
-
-                    alert("Login successful!");
-                    window.location.href = "dashboard.html"; // Redirect to dashboard
-                } else if (response.status === 401) {
-                    alert("Unauthorized: Invalid email or password.");
                 } else {
-                    const errorMessage = await response.text();
-                    alert("Login failed: " + errorMessage);
+                    // Handle errors (non-200 response codes)
+                    alert("Login failed: " + responseText); // Show error message
                 }
             } catch (error) {
                 console.error("Error:", error);
@@ -73,6 +75,4 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("Login form not found!");
     }
-
-
 });
