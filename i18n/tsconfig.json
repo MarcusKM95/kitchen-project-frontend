@@ -1,0 +1,86 @@
+{
+  "da": {
+    "login": {
+      "title": "Log ind",
+      "heading": "Log ind på din konto",
+      "email": "E-mail:",
+      "password": "Adgangskode:",
+      "submit": "Log ind",
+      "noAccount": "Har du ikke en konto?",
+      "createAccount": "Opret en her"
+    },
+    "nav": {
+      "home": "Forside",
+      "gallery": "Galleri",
+      "service": "Service",
+      "about": "Om os",
+      "contact": "Kontakt os"
+    },
+    "footer": {
+      "copy": "&copy; 2024 KitchenService. Alle rettigheder forbeholdes."
+    }
+  },
+  "en": {
+    "login": {
+      "title": "Login",
+      "heading": "Log in to your account",
+      "email": "Email:",
+      "password": "Password:",
+      "submit": "Login",
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create one here"
+    },
+    "nav": {
+      "home": "Home",
+      "gallery": "Gallery",
+      "service": "Service",
+      "about": "About Us",
+      "contact": "Contact Us"
+    },
+    "footer": {
+      "copy": "&copy; 2024 KitchenService. All rights reserved."
+    }
+  },
+  "fr": {
+    "login": {
+      "title": "Connexion",
+      "heading": "Connectez-vous à votre compte",
+      "email": "E-mail :",
+      "password": "Mot de passe :",
+      "submit": "Connexion",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "createAccount": "Créez-en un ici"
+    },
+    "nav": {
+      "home": "Accueil",
+      "gallery": "Galerie",
+      "service": "Service",
+      "about": "À propos de nous",
+      "contact": "Contactez-nous"
+    },
+    "footer": {
+      "copy": "&copy; 2024 KitchenService. Tous droits réservés."
+    }
+  },
+  "be": {
+    "login": {
+      "title": "Inloggen",
+      "heading": "Log in op uw account",
+      "email": "E-mail:",
+      "password": "Wachtwoord:",
+      "submit": "Inloggen",
+      "noAccount": "Heeft u geen account?",
+      "createAccount": "Maak er hier een"
+    },
+    "nav": {
+      "home": "Home",
+      "gallery": "Galerij",
+      "service": "Dienst",
+      "about": "Over ons",
+      "contact": "Contact"
+    },
+    "footer": {
+      "copy": "&copy; 2024 KitchenService. Alle rechten voorbehouden."
+    }
+  }
+}

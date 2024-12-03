@@ -4,7 +4,7 @@
     "description": "We are dedicated to providing the best kitchen services."
   },
   "nav": {
-    "forside": "Home",
+    "home": "Home",
     "gallery": "Gallery",
     "service": "Service",
     "about": "About Us",
@@ -21,35 +21,42 @@
   },
   "service": {
     "title": "Our Services",
-    "description": "We offer a wide range of kitchen services to meet your requirements."
+    "description": "We offer a wide range of kitchen services to meet your needs."
   },
   "contact": {
     "title": "Contact Us",
-    "description": "Get in touch with us for more information."
+    "description": "Contact us for more information."
   },
   "footer": {
     "copyright": "© 2024 KitchenService. All rights reserved."
   },
-
   "aboutMe": {
     "Title": "About Me",
-    "Description": "My name is Peter, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations."
+    "Description": "My name is Daud, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love turning kitchen dreams into reality and take pride in delivering the highest quality craftsmanship. For me, every project is unique, and I always strive to exceed my clients' expectations."
   },
   "aboutCompany": {
     "Title": "About Our Company",
-    "Description": "JN Kitchen Montage was founded in 2002 with a single goal: to offer customized kitchen solutions that combine functionality and aesthetics. Over the years, we have had the pleasure of working with a wide range of customers, from private homeowners to larger companies. Our success is built on trust, quality, and a personal approach to every single project."
+    "Description": "TERLO Kitchen Installation was founded in 2002 with one goal: to offer custom kitchen solutions that combine functionality and aesthetics. Over the years, we have had the pleasure of working with a wide range of clients, from private homeowners to larger companies. Our success is based on trust, quality, and a personal approach to every project."
   },
   "aboutSkills": {
     "Title": "Our Expertise",
     "Description": [
-      "Installation of kitchens with the highest quality.",
+      "Installation of top-quality kitchens.",
       "Design and customization of kitchen solutions.",
-      "Repair and maintenance of kitchen equipment.",
+      "Repair and maintenance of kitchen appliances.",
       "Installation of countertops and cabinets.",
       "Tailored advice for kitchen design."
     ]
+  },
+
+  "register": {
+    "title": "Create Account",
+    "heading": "Create an account"
+  },
+  "login": {
+    "title": "Login",
+    "heading": "Login"
   }
 }
-
 
 

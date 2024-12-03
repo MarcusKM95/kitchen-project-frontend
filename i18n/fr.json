@@ -1,0 +1,61 @@
+{
+  "about": {
+    "title": "À propos de nous",
+    "description": "Nous sommes dédiés à fournir les meilleurs services de cuisine."
+  },
+  "nav": {
+    "home": "Accueil",
+    "gallery": "Galerie",
+    "service": "Service",
+    "about": "À propos de nous",
+    "contact": "Contactez-nous"
+  },
+  "hero": {
+    "title": "Bienvenue chez KitchenService",
+    "description": "Nous fournissons des solutions de cuisine de premier ordre adaptées à vos besoins.",
+    "cta": "Nos Services"
+  },
+  "gallery": {
+    "title": "Galerie",
+    "description": "Explorez nos derniers projets de cuisine."
+  },
+  "service": {
+    "title": "Nos Services",
+    "description": "Nous proposons une large gamme de services de cuisine pour répondre à vos besoins."
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Contactez-nous pour plus d'informations."
+  },
+  "footer": {
+    "copyright": "© 2024 KitchenService. Tous droits réservés."
+  },
+  "aboutMe": {
+    "Title": "À propos de moi",
+    "Description": "Je m'appelle Daud, et je suis un installateur de cuisines passionné avec plus de 10 ans d'expérience dans l'industrie. J'adore transformer les rêves de cuisine en réalité et je suis fier de fournir un artisanat de la plus haute qualité. Pour moi, chaque projet est unique, et je m'efforce toujours de dépasser les attentes de mes clients."
+  },
+  "aboutCompany": {
+    "Title": "À propos de notre entreprise",
+    "Description": "TERLO Kitchen Installation a été fondée en 2002 avec un seul objectif : offrir des solutions de cuisine sur mesure alliant fonctionnalité et esthétique. Au fil des ans, nous avons eu le plaisir de travailler avec une large gamme de clients, des propriétaires privés aux grandes entreprises. Notre succès repose sur la confiance, la qualité et une approche personnelle de chaque projet."
+  },
+  "aboutSkills": {
+    "Title": "Notre expertise",
+    "Description": [
+      "Installation de cuisines de qualité supérieure.",
+      "Conception et personnalisation de solutions de cuisine.",
+      "Réparation et entretien des appareils de cuisine.",
+      "Installation de plans de travail et d'armoires.",
+      "Conseils personnalisés pour la conception de cuisines."
+    ]
+  },
+
+  "register": {
+    "title": "Créer un compte",
+    "heading": "Créer un compte"
+  },
+  "login": {
+    "title": "Connexion",
+    "heading": "Connexion"
+  }
+}
+

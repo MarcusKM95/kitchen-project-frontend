@@ -1,28 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Login</title>
+    <title data-i18n="login.title">Login</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
 <header>
-    <h1>Login</h1>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="KitchenService Logo" class="logo-img">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav.home">Forside</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+            <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+            <li><a href="about.html" data-i18n="nav.about">Om os</a></li>
+            <li><a href="ContactForm.html" data-i18n="nav.contact">Kontakt os</a></li>
+        </ul>
+    </nav>
 </header>
+
 <main>
-    <form id="loginForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <section class="login-section">
+        <h1 data-i18n="login.heading">Log ind på din konto</h1>
+        <form id="loginForm" class="login-form">
+            <label for="email" data-i18n="login.email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+            <label for="password" data-i18n="login.password">Adgangskode:</label>
+            <input type="password" id="password" name="password" placeholder="Indtast din adgangskode" required>
 
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit" data-i18n="login.submit">Log ind</button>
+        </form>
 
-    <p>Ny bruger? <a href="register.html">Registrér dig her</a></p>
+        <p data-i18n="login.noAccount">Har du ikke en konto? <a href="register.html" data-i18n="login.createAccount">Opret en her</a></p>
+    </section>
 </main>
-<script src="js/login.js"></script>
+
+<!-- Floating Language Selector -->
+<div class="language-selector">
+    <button id="lang-btn">🌐</button>
+    <div id="lang-options" class="lang-options hidden">
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('da')">Dansk</button>
+        <button onclick="setLanguage('be')">Belgian</button>
+        <button onclick="setLanguage('fr')">Français</button>
+    </div>
+</div>
+
+<footer>
+    <p data-i18n="footer.copy">&copy; 2024 KitchenService. Alle rettigheder forbeholdes.</p>
+</footer>
+
+<script src="js/LanguageSelect.js"></script>
+<script src="js/login.js" defer></script>
 </body>
 </html>

@@ -9,6 +9,7 @@
     <meta name="description" content="Learn more about Peter and JN Kitchen Montage, our expertise, and our commitment to quality kitchen solutions.">
 </head>
 <body>
+
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -17,7 +18,7 @@
             </a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" data-i18n="nav.forside">Forside</a></li>
+            <li><a href="index.html" data-i18n="nav.forside">Home</a></li>
             <li><a href="gallery.html" data-i18n="nav.gallery">Gallery</a></li>
             <li><a href="service.html" data-i18n="nav.service">Service</a></li>
             <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
@@ -35,14 +36,14 @@
     <section class="about-section">
         <h1 data-i18n="aboutMe.Title">About Me</h1>
         <div class="about-me-content">
-            <img src="images/peter-profile.jpg" alt="Peter - Kitchen Installer" class="about-profile-img">
-            <p data-i18n="aboutMe.Description">My name is Peter, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations.</p>
+            <img src="images/about.jpg" alt="Peter - Kitchen Installer" class="about-profile-img">
+            <p data-i18n="aboutMe.Description">My name is Daud, and I am a passionate kitchen installer with over 10 years of experience in the industry. I love transforming kitchen dreams into reality and take pride in delivering craftsmanship of the highest quality. For me, every project is unique, and I always strive to exceed my customers' expectations.</p>
         </div>
     </section>
 
     <section class="about-section">
         <h1 data-i18n="aboutCompany.Title">About Our Company</h1>
-        <p data-i18n="aboutCompany.Description">JN Kitchen Montage was founded in 2002 with a single goal: to offer customized kitchen solutions that combine functionality and aesthetics. Over the years, we have had the pleasure of working with a wide range of customers, from private homeowners to larger companies. Our success is built on trust, quality, and a personal approach to every single project.</p>
+        <p data-i18n="aboutCompany.Description">TERLO Kitchen Montage was founded in 2002 with a single goal: to offer customized kitchen solutions that combine functionality and aesthetics. Over the years, we have had the pleasure of working with a wide range of customers, from private homeowners to larger companies. Our success is built on trust, quality, and a personal approach to every single project.</p>
     </section>
 
     <section class="about-section">
@@ -55,11 +56,12 @@
 
 <!-- Floating Language Selector -->
 <div class="language-selector">
-    <button id="lang-btn" aria-label="Select Language">🌐</button>
+    <button id="lang-btn">🌐</button>
     <div id="lang-options" class="lang-options hidden">
-        <button onclick="setLanguage('en')" aria-label="Switch to English">English</button>
-        <button onclick="setLanguage('da')" aria-label="Skift til dansk">Danish</button>
-        <button onclick="setLanguage('be')" aria-label="Switch to Belgian">Belgian</button>
+        <button onclick="setLanguage('en')">English</button>
+        <button onclick="setLanguage('da')">Dansk</button>
+        <button onclick="setLanguage('be')">Belgian</button>
+        <button onclick="setLanguage('fr')">Français</button>
     </div>
 </div>
 
@@ -71,5 +73,6 @@
 
 <script src="js/LanguageSelect.js"></script>
 <script src="js/about.js"></script>
+
 </body>
 </html>

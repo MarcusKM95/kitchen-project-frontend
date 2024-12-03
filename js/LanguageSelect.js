@@ -1,8 +1,10 @@
-// main.js
-
 let currentLanguage = 'en';
 
-// Function to set the language because we want to change the language later on MKM
+document.addEventListener('DOMContentLoaded', function() {
+    loadLanguagePreference();
+    loadContent();
+});
+
 function setLanguage(lang) {
     currentLanguage = lang;
     loadContent();
@@ -10,50 +12,58 @@ function setLanguage(lang) {
     toggleLanguageOptions(false);
 }
 
-// Function to load content based on selected language from i18n files. Added functionality to handle lists MKM
 function loadContent() {
     fetch(`i18n/${currentLanguage}.json`)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error fetching language file: ${currentLanguage}.json`);
+            }
+            return response.json();
+        })
         .then(data => {
-            // Select all elements with data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const keys = element.getAttribute('data-i18n').split('.');
                 let text = data;
-                keys.forEach(key => {
-                    text = text[key];
-                });
 
-                if (text) {
+                // Kontroller om hver nøgle findes i data
+                for (let key of keys) {
+                    if (text && text[key]) {
+                        text = text[key];
+                    } else {
+                        text = undefined; // Hvis en nøgle mangler, så stop og gør tekst undefined
+                        break;
+                    }
+                }
+
+                // Hvis vi har tekst, opdater elementet
+                if (text !== undefined) {
                     if (Array.isArray(text)) {
-                        // If the element is a list and text is an array, populate list items
+                        // Hvis teksten er en liste, og elementet er en liste (ul/ol), så fyld den med elementer
                         if (element.tagName.toLowerCase() === 'ul' || element.tagName.toLowerCase() === 'ol') {
-                            element.innerHTML = ''; // Clear existing items
+                            element.innerHTML = ''; // Tømmer eksisterende indhold
                             text.forEach(item => {
                                 const li = document.createElement('li');
                                 li.textContent = item;
                                 element.appendChild(li);
                             });
                         } else {
-                            // For other elements, join array into a string
-                            element.innerText = text.join(', ');
+                            element.innerText = text.join(', '); // For andre elementer, sæt tekst
                         }
                     } else {
-                        element.innerText = text;
+                        element.innerText = text; // Hvis det ikke er en liste, sæt normal tekst
                     }
+                } else {
+                    console.warn(`Missing translation for: ${element.getAttribute('data-i18n')}`);
                 }
             });
         })
-        .catch(error => {
-            console.error('Error loading i18n file:', error);
-        });
+        .catch(error => console.error('Error loading i18n file:', error));
 }
 
-// Save to localStorage
 function saveLanguagePreference(lang) {
     localStorage.setItem('preferredLanguage', lang);
 }
 
-// Loads language select from localStorage
 function loadLanguagePreference() {
     const savedLang = localStorage.getItem('preferredLanguage');
     if (savedLang) {
@@ -61,7 +71,6 @@ function loadLanguagePreference() {
     }
 }
 
-// Toggle language options visibility
 function toggleLanguageOptions(show) {
     const langOptions = document.getElementById('lang-options');
     if (show === undefined) {
@@ -73,28 +82,16 @@ function toggleLanguageOptions(show) {
     }
 }
 
-// Event listener for language button
+// Event listener for the language change button
 document.getElementById('lang-btn').addEventListener('click', (event) => {
-    event.stopPropagation(); // Prevent event from bubbling up to document
+    event.stopPropagation();
     toggleLanguageOptions();
 });
 
-// Close language options when clicking outside
+// Close language options if clicked outside of the language selector
 document.addEventListener('click', (event) => {
     const langSelector = document.querySelector('.language-selector');
     if (!langSelector.contains(event.target)) {
         toggleLanguageOptions(false);
     }
-});
-
-// Toggle navigation links on hamburger click //Maybe delete
-document.getElementById('hamburger').addEventListener('click', () => {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
-});
-
-// Initialize content on page load
-document.addEventListener('DOMContentLoaded', () => {
-    loadLanguagePreference();
-    loadContent();
 });

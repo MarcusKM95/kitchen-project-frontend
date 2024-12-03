@@ -1,12 +1,10 @@
 {
-
   "about": {
     "title": "Om Os",
     "description": "Vi er dedikerede til at levere de bedste køkkentjenester."
   },
-
   "nav": {
-    "forside": "Forside",
+    "home": "Forside",
     "gallery": "Galleri",
     "service": "Service",
     "about": "Om Os",
@@ -30,17 +28,16 @@
     "description": "Kontakt os for mere information."
   },
   "footer": {
-    "copyright": "© 2024 KitchenService. All rights reserved."
+    "copyright": "© 2024 KitchenService. All rights reserved.",
+    "copy": "© 2024 KitchenService. Alle rettigheder forbeholdes."
   },
-
-
   "aboutMe": {
     "Title": "Om Mig",
-    "Description": "Mit navn er Peter, og jeg er en passioneret køkkenmontør med over 10 års erfaring i branchen. Jeg elsker at forvandle køkkendrømme til virkelighed og sætter en ære i at levere håndværk af højeste kvalitet. For mig er hvert projekt unikt, og jeg stræber altid efter at overgå mine kunders forventninger."
+    "Description": "Mit navn er Daud, og jeg er en passioneret køkkenmontør med over 10 års erfaring i branchen. Jeg elsker at forvandle køkkendrømme til virkelighed og sætter en ære i at levere håndværk af højeste kvalitet. For mig er hvert projekt unikt, og jeg stræber altid efter at overgå mine kunders forventninger."
   },
   "aboutCompany": {
     "Title": "Om Vores Firma",
-    "Description": "JN Køkkenmontage blev grundlagt i 2002 med et enkelt mål: at tilbyde skræddersyede køkkenløsninger, der kombinerer funktionalitet og æstetik. Gennem årene har vi haft fornøjelsen af at arbejde med en lang række kunder, fra private boligejere til større virksomheder. Vores succes bygger på tillid, kvalitet og en personlig tilgang til hvert eneste projekt."
+    "Description": "TERLO Køkkenmontage blev grundlagt i 2002 med et enkelt mål: at tilbyde skræddersyede køkkenløsninger, der kombinerer funktionalitet og æstetik. Gennem årene har vi haft fornøjelsen af at arbejde med en lang række kunder, fra private boligejere til større virksomheder. Vores succes bygger på tillid, kvalitet og en personlig tilgang til hvert eneste projekt."
   },
   "aboutSkills": {
     "Title": "Vores Ekspertise",
@@ -51,5 +48,20 @@
       "Installation af bordplader og skabe.",
       "Skræddersyet rådgivning til køkkendesign."
     ]
+  },
+
+
+  "register": {
+    "title": "Opret Konto",
+    "heading": "Opret en konto"
+  },
+  "login": {
+    "title": "Log ind",
+    "heading": "Log ind"
   }
 }
+
+
+
+
+

@@ -1,5 +1,4 @@
 {
-
   "about": {
     "title": "Over Ons",
     "description": "Wij zetten ons in voor het leveren van de beste keukendiensten."
@@ -33,11 +32,11 @@
   },
   "aboutMe": {
     "Title": "Over Mij",
-    "Description": "Mijn naam is Peter en ik ben een gepassioneerde keukeninstallateur met meer dan 10 jaar ervaring in de branche. Ik hou ervan om keukendromen om te zetten in realiteit en ben trots op het leveren van vakmanschap van de hoogste kwaliteit. Voor mij is elk project uniek en ik streef er altijd naar om de verwachtingen van mijn klanten te overtreffen."
+    "Description": "Mijn naam is Daud en ik ben een gepassioneerde keukeninstallateur met meer dan 10 jaar ervaring in de branche. Ik hou ervan om keukendromen om te zetten in realiteit en ben trots op het leveren van vakmanschap van de hoogste kwaliteit. Voor mij is elk project uniek en ik streef er altijd naar om de verwachtingen van mijn klanten te overtreffen."
   },
   "aboutCompany": {
     "Title": "Over Ons Bedrijf",
-    "Description": "JN Kitchen Montage werd opgericht in 2002 met één doel: op maat gemaakte keukenoplossingen aanbieden die functionaliteit en esthetiek combineren. In de loop der jaren hebben we met veel plezier gewerkt met een breed scala aan klanten, van particuliere huiseigenaren tot grotere bedrijven. Ons succes is gebaseerd op vertrouwen, kwaliteit en een persoonlijke aanpak bij elk project."
+    "Description": "TERLO Kitchen Montage werd opgericht in 2002 met één doel: op maat gemaakte keukenoplossingen aanbieden die functionaliteit en esthetiek combineren. In de loop der jaren hebben we met veel plezier gewerkt met een breed scala aan klanten, van particuliere huiseigenaren tot grotere bedrijven. Ons succes is gebaseerd op vertrouwen, kwaliteit en een persoonlijke aanpak bij elk project."
   },
   "aboutSkills": {
     "Title": "Onze Expertise",
@@ -48,5 +47,20 @@
       "Installatie van werkbladen en kasten.",
       "Advies op maat voor keukenontwerp."
     ]
+  },
+
+  "register": {
+    "title": "Maak een account",
+    "heading": "Maak een account aan"
+  },
+  "login": {
+    "title": "Inloggen",
+    "heading": "Log in"
   }
 }
+
+
+
+
+
+

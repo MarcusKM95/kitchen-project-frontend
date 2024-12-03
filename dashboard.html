@@ -46,6 +46,16 @@
             </div>
         </section>
     </main>
+    <div class="language-selector">
+        <button id="lang-btn">🌐</button>
+        <div id="lang-options" class="lang-options hidden">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('da')">Dansk</button>
+            <button onclick="setLanguage('be')">Belgian</button>
+            <button onclick="setLanguage('fr')">Français</button> <!-- Tilføj fransk -->
+        </div>
+    </div>
+
 
     <!-- Modal -->
     <div id="settings-modal" class="modal">
@@ -57,6 +67,6 @@
     </div>
 </div>
 
-<script src="dashboard.js"></script>
+<script src="js/dashboard.js"></script>
 </body>
 </html>

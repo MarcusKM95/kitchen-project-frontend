@@ -1,34 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/register.css">
-  <title>Register</title>
+  <title data-i18n="register.title">Opret Konto</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
 <header>
-  <h1>Register</h1>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="KitchenService Logo" class="logo-img">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Forside</a></li>
+      <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
+      <li><a href="service.html" data-i18n="nav.service">Service</a></li>
+      <li><a href="about.html" data-i18n="nav.about">Om os</a></li>
+      <li><a href="ContactForm.html" data-i18n="nav.contact">Kontakt os</a></li>
+    </ul>
+  </nav>
 </header>
+
 <main>
-  <form id="registerForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <section id="register-section" class="register-section">
+    <h1 data-i18n="register.heading">Opret en konto</h1>
+    <form id="registerForm" class="register-form">
+      <label for="username" data-i18n="register.username">Brugernavn:</label>
+      <input type="text" id="username" name="username" placeholder="Indtast dit brugernavn" required>
 
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required>
+      <label for="phone" data-i18n="register.phone">Telefonnummer:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Indtast dit telefonnummer" pattern="[0-9]{8}" required>
 
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" name="phone" required>
+      <label for="email" data-i18n="register.email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="Indtast din e-mail" required>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+      <label for="password" data-i18n="register.password">Adgangskode:</label>
+      <input type="password" id="password" name="password" placeholder="Vælg en adgangskode" required>
 
-    <button type="submit">Register</button>
-  </form>
+      <label for="confirm-password" data-i18n="register.confirmPassword">Bekræft adgangskode:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Bekræft din adgangskode" required>
 
-  <p>Allerede en bruger? <a href="login.html">Log ind her</a></p>
+      <button type="submit" data-i18n="register.submit">Opret konto</button>
+    </form>
+
+    <p data-i18n="register.haveAccount">Har du allerede en konto? <a href="login.html" id="login-link" data-i18n="register.loginHere">Log ind her</a></p>
+
+
+
+  </section>
+
+  <section id="login-section" class="login-section" style="display: none;">
+    <h1 data-i18n="login.heading">Log ind</h1>
+    <form id="loginForm" class="login-form">
+      <label for="login-email" data-i18n="login.email">E-mail:</label>
+      <input type="email" id="login-email" name="login-email" placeholder="Indtast din e-mail" required>
+
+      <label for="login-password" data-i18n="login.password">Adgangskode:</label>
+      <input type="password" id="login-password" name="login-password" placeholder="Indtast din adgangskode" required>
+
+      <button type="submit" data-i18n="login.submit">Log ind</button>
+    </form>
+
+    <p data-i18n="login.needAccount">Har du ikke en konto? <a href="register.html" data-i18n="login.registerHere">Opret konto her</a></p>
+  </section>
+
 </main>
-<script src="js/register.js"></script>
+
+<!-- Floating Language Selector -->
+<div class="language-selector">
+  <button id="lang-btn">🌐</button>
+  <div id="lang-options" class="lang-options hidden">
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('da')">Dansk</button>
+    <button onclick="setLanguage('be')">Belgian</button>
+    <button onclick="setLanguage('fr')">Français</button>
+  </div>
+</div>
+
+<footer>
+  <p data-i18n="footer.copy">&copy; 2024 KitchenService. Alle rettigheder forbeholdes.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="js/LanguageSelect.js"></script>
+<script src="js/register.js" defer></script>
+<script src="js/login.js" defer></script>
+
+
 </body>
 </html>
