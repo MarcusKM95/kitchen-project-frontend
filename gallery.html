@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery</title>
   <link rel="stylesheet" href="css/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -16,42 +16,70 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="index.html" data-i18n="nav.forside">Forside</a></li>
-      <li><a href="gallery.html" data-i18n="nav.gallery">Galleri</a></li>
-      <li><a href="service.html" data-i18n="nav.service">Service</a></li>
-      <li><a href="about.html" data-i18n="nav.about">Om os</a></li>
-      <li><a href="ContactForm.html" data-i18n="nav.contact">Kontakt os</a></li>
-      <li class="login-link"><a href="register.html">Login</a></li>
+      <li><a href="index.html">Forside</a></li>
+      <li><a href="gallery.html" class="active">Galleri</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">Om os</a></li>
+      <li><a href="ContactForm.html">Kontakt os</a></li>
+      <li class="login-link"><a href="login.html">Login</a></li>
     </ul>
-    <div class="hamburger" id="hamburger">
+    <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </nav>
 </header>
 
 <main>
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Our Gallery</h1>
-    <p>Explore our past projects and see the quality of our work.</p>
+    <div class="hero-content">
+      <h1>Vores Galleri</h1>
+      <p>Oplev vores tidligere projekter og se kvaliteten af vores arbejde.</p>
+    </div>
+  </section>
+
+  <!-- Image Upload Section -->
+  <section class="upload-section">
+    <h2>Upload Et Billede</h2>
+    <div class="upload-container">
+      <input type="file" id="fileInput" accept="image/*">
+      <button onclick="uploadImage(document.getElementById('fileInput'))">Upload</button>
+    </div>
+    <!-- Loader Element -->
+    <div id="loader" style="display: none;">
+      <img src="images/about.jpg" alt="Loading...">
+    </div>
+
+
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2>Vores Billeder</h2>
+    <div id="gallery" class="gallery-container">
+      <!-- Billederne vises her -->
+    </div>
   </section>
 </main>
+
 <div class="language-selector">
-  <button id="lang-btn">🌐</button>
-  <div id="lang-options" class="lang-options hidden">
+  <button id="lang-btn" aria-label="Change Language">🌐</button>
+  <div id="lang-options" class="lang-options hidden" aria-labelledby="lang-btn">
     <button onclick="setLanguage('en')">English</button>
     <button onclick="setLanguage('da')">Dansk</button>
     <button onclick="setLanguage('be')">Belgian</button>
-    <button onclick="setLanguage('fr')">Français</button> <!-- Tilføj fransk -->
+    <button onclick="setLanguage('fr')">Français</button>
   </div>
 </div>
-
 
 <footer>
   <p>&copy; 2024 KitchenService. All rights reserved.</p>
 </footer>
 
+<!-- JavaScript -->
 <script src="js/LanguageSelect.js"></script>
+<script src="js/gallery.js"></script>
 </body>
 </html>

@@ -940,6 +940,215 @@ p[data-i18n="login.noAccount"] {
     display: block;
 }
 
+/*
+========================
+Gallery
+======================== */
+
+.admin-dashboard {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.gallery-management {
+    margin-bottom: 40px;
+}
+
+#imagePreviewContainer {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+}
+
+#imagePreviewContainer img {
+    max-width: 150px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.gallery-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.gallery-item {
+    position: relative;
+}
+
+.gallery-item img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.reorder-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
 
 
 
+
+/*
+=======================
+App.js to Gallery
+======================
+ */
+
+/* Generelle stilarter */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0b1c70;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #0073e6;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Upload Section */
+.upload-section {
+    padding: 40px 20px;
+    background-color: #0b1c70;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.upload-container {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#fileInput {
+    padding: 10px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #0073e6;
+    color: #0b1c70;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 40px 20px;
+    background-color: #0b1c70;
+    margin-top: 20px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-container button {
+    margin-top: 10px;
+    background-color: #ff4c4c;
+    padding: 5px 15px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    color: #0b1c70;
+}
+
+.gallery-container button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .upload-container {
+        display: block;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+}

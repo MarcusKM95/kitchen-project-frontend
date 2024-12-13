@@ -1,4 +1,4 @@
-// Language settings
+
 const languages = {
     en: {
         aboutMe: {
