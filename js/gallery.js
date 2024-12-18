@@ -1,115 +1,140 @@
-const BASE_URL = 'http://localhost:8080/api/gallery';
-
-// Hent billeder og vis dem på siden
-async function getImages() {
+// Asynkron funktion til at hente galleri-billeder
+async function loadGallery() {
     try {
-        const token = localStorage.getItem('authToken');
-        const response = await fetch(`${BASE_URL}/images`, {
-            method: 'GET',
+        const response = await fetch('/api/gallery/image', {
             headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json',
-            },
+                'Authorization': 'Bearer YOUR_JWT_TOKEN' // Tilføj din token her
+            }
         });
 
-        if (!response.ok) {
-            throw new Error('Fejl under hentning af billeder');
+        if (response.ok) {
+            const images = await response.json();
+            const galleryContainer = document.getElementById('gallery');
+            galleryContainer.innerHTML = ''; // Ryd galleriet før ny indlæsning
+
+            images.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image.url; // Tilpas baseret på din backend
+                imgElement.alt = image.title || 'Billede'; // Standardværdi, hvis titel mangler
+                imgElement.addEventListener('click', () => openLightbox(image.url));
+                galleryContainer.appendChild(imgElement);
+            });
+        } else {
+            console.error('Fejl ved hentning af billeder:', response.statusText);
         }
-
-        const images = await response.json();
-        displayImages(images);
     } catch (error) {
-        console.error('Error:', error);
-        alert('Fejl ved hentning af billeder');
+        console.error('En fejl opstod:', error);
     }
 }
 
-// Vis billeder på siden
-function displayImages(images) {
-    const gallery = document.getElementById('gallery');
-    gallery.innerHTML = ''; // Tøm galleriet før visning af billeder
-
-    images.forEach(image => {
-        const imgElement = document.createElement('img');
-        imgElement.src = `${BASE_URL}/images/${image}`;  // Vist som billede
-        imgElement.alt = image;
-
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Slet';
-        deleteButton.onclick = () => deleteImage(image);
-
-        const imageContainer = document.createElement('div');
-        imageContainer.appendChild(imgElement);
-        imageContainer.appendChild(deleteButton);
-
-        gallery.appendChild(imageContainer);
-    });
-}
-
-// Upload billede
-async function uploadImage(fileInput) {
-    const file = fileInput.files[0];
-    if (!file) {
-        alert('Vælg et billede at uploade');
-        return;
-    }
-
+// Upload af billede
+document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fileInput = document.getElementById('fileInput');
     const formData = new FormData();
-    formData.append('file', file);
+    formData.append('file', fileInput.files[0]);
 
     try {
-        const token = localStorage.getItem('authToken');
-        const response = await fetch(`${BASE_URL}/upload`, {
+        const response = await fetch('/api/gallery/upload', {
             method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-            },
             body: formData,
         });
 
-        if (!response.ok) {
-            throw new Error('Fejl under billede upload');
-        }
+        const message = await response.text();
+        document.getElementById('uploadStatus').innerText = message;
 
-        alert('Billede uploadet!');
-        getImages(); // Opdater billedgalleriet
+        if (response.ok) {
+            await loadGallery(); // Indlæs galleriet igen efter succesfuld upload
+        } else {
+            console.error('Fejl ved upload:', message);
+        }
     } catch (error) {
-        console.error('Error:', error);
-        alert('Fejl ved upload af billede');
+        console.error('En fejl opstod under upload:', error);
     }
-}
+});
 
 // Slet billede
 async function deleteImage(filename) {
     try {
-        const token = localStorage.getItem('authToken');
-        const response = await fetch(`${BASE_URL}/delete/${filename}`, {
+        const response = await fetch(`/api/gallery/delete/${encodeURIComponent(filename)}`, {
             method: 'DELETE',
             headers: {
-                'Authorization': `Bearer ${token}`,
-            },
+                'Authorization': 'Bearer YOUR_JWT_TOKEN'
+            }
         });
 
-        if (!response.ok) {
-            throw new Error('Fejl ved sletning af billede');
-        }
+        const message = await response.text();
+        alert(message);
 
-        alert('Billede slettet');
-        getImages(); // Opdater galleriet
+        if (response.ok) {
+            await loadGallery(); // Indlæs galleriet igen efter succesfuld sletning
+        } else {
+            console.error('Fejl ved sletning:', message);
+        }
     } catch (error) {
-        console.error('Error:', error);
-        alert('Fejl ved sletning af billede');
+        console.error('En fejl opstod under sletning:', error);
     }
 }
 
-// Kald getImages ved indlæsning af siden
-document.addEventListener('DOMContentLoaded', getImages);
+// Lightbox funktionalitet
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = lightbox.querySelector('.close');
+const prevButton = lightbox.querySelector('.prev');
+const nextButton = lightbox.querySelector('.next');
+let currentIndex = 0;
+let galleryImages = [];
 
-// Håndter billedupload, når en fil vælges
-const uploadInput = document.getElementById('fileInput');
-uploadInput.addEventListener('change', () => uploadImage(uploadInput));
+// Åbn lightbox
+function openLightbox(src) {
+    lightboxImage.src = src;
+    lightbox.classList.remove('hidden');
+}
 
+// Luk lightbox
+function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightboxImage.src = '';
+}
 
-console.log(image);
+// Skift billede i lightbox
+function changeImage(direction) {
+    currentIndex = (currentIndex + direction + galleryImages.length) % galleryImages.length;
+    lightboxImage.src = galleryImages[currentIndex].src;
+}
 
-imgElement.src = `${BASE_URL}/images/${image}?token=${localStorage.getItem('authToken')}`;
+// Zoom funktionalitet til lightbox-billede
+let scale = 1;
+lightboxImage.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    scale += e.deltaY > 0 ? -0.1 : 0.1;
+    scale = Math.max(1, Math.min(3, scale)); // Bevar zoom mellem 1 og 3
+    lightboxImage.style.transform = `scale(${scale})`;
+});
+
+// Luk lightbox ved klik uden for billedet
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+// Event listeners til navigation og lukning
+closeButton.addEventListener('click', closeLightbox);
+prevButton.addEventListener('click', () => changeImage(-1));
+nextButton.addEventListener('click', () => changeImage(1));
+
+// Initialiser galleriet ved DOMContentLoaded
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadGallery();
+
+    // Opdater lightbox-billeder efter galleriet er hentet
+    const galleryContainer = document.getElementById('gallery');
+    galleryImages = Array.from(galleryContainer.querySelectorAll('img'));
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+            currentIndex = index;
+            openLightbox(img.src);
+        });
+    });
+});

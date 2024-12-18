@@ -19,6 +19,7 @@
                 <li><a href="#">Orders</a></li>
                 <li><a href="#">Users</a></li>
                 <li><a href="#">Settings</a></li>
+                <li><a href="gallery.html">Gallery</a></li> <!-- Link to Gallery -->
             </ul>
         </nav>
     </aside>
@@ -29,6 +30,7 @@
             <h1>Dashboard Overview</h1>
         </header>
 
+        <!-- Cards Section -->
         <section class="cards">
             <div class="card">
                 <h2>Orders</h2>
@@ -45,17 +47,35 @@
                 <button onclick="openSettingsModal()">Open Settings</button>
             </div>
         </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2>Gallery</h2>
+            <p>View the images uploaded to the gallery.</p>
+
+            <!-- Upload Form -->
+            <div class="upload-form">
+                <form id="uploadForm">
+                    <label for="fileInput">Choose image:</label>
+                    <input type="file" id="fileInput" name="file" accept="image/*" required>
+                    <button type="submit">Upload</button>
+                </form>
+                <div id="uploadStatus"></div>
+            </div>
+
+
+        </section>
     </main>
+
     <div class="language-selector">
         <button id="lang-btn">🌐</button>
         <div id="lang-options" class="lang-options hidden">
             <button onclick="setLanguage('en')">English</button>
             <button onclick="setLanguage('da')">Dansk</button>
             <button onclick="setLanguage('be')">Belgian</button>
-            <button onclick="setLanguage('fr')">Français</button> <!-- Tilføj fransk -->
+            <button onclick="setLanguage('fr')">Français</button>
         </div>
     </div>
-
 
     <!-- Modal -->
     <div id="settings-modal" class="modal">
@@ -68,5 +88,6 @@
 </div>
 
 <script src="js/dashboard.js"></script>
+
 </body>
 </html>
