@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your gallery easily with our intuitive interface.">
+    <title>Gallery Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/galleryCustomer.css">
+    <script defer src="js/gallery.js"></script>
+</head>
+
+<body>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">KitchenService</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="ContactForm.html">Contact Us</a></li>
+            <li class="login-link"><a href="register.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="gallery">
+        <h1>Gallery Management</h1>
+
+        <!-- Upload Section -->
+        <div class="upload-section">
+            <h2>Upload Image</h2>
+            <form id="uploadForm">
+                <input type="file" id="imageFile" name="file" accept="image/*" required>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadMessage"></p>
+        </div>
+
+        <!-- Gallery Display -->
+        <div class="gallery-display">
+            <h2>All Images</h2>
+            <ul id="imageList" class="image-list list-view"></ul>
+        </div>
+    </section>
+</main>
+
+<!-- Toggle View Button -->
+<button id="toggleView" class="toggle-view-btn">Skift til Grid View</button>
+
+
+<footer>
+    <p>&copy; 2024 KitchenService. All rights reserved.</p>
+</footer>
+<script src="js/gallery.js"></script>
+
+</body>
+</html>
