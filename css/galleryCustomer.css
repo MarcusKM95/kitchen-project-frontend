@@ -1,0 +1,39 @@
+/* Stil til liste-visning */
+#imageList.list-view .image-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#imageList.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+#imageList.grid-view .image-item {
+    display: block;
+    text-align: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* This will ensure the image is scaled properly */
+    max-width: 100%; /* Prevent images from stretching beyond their container */
+}
+
+/* Ensure the image items are visible */
+.image-item {
+    list-style: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 300px; /* Make sure they are large enough to be visible */
+    height: auto;
+    object-fit: cover; /* Add this to ensure images are not distorted */
+}
